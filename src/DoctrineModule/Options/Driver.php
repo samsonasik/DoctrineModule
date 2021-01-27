@@ -108,8 +108,12 @@ class Driver extends AbstractOptions
     /**
      * @param mixed[] $paths
      */
-    public function setPaths(array $paths): void
+    public function setPaths($paths): void
     {
+        if (is_string($paths)) {
+            $paths = [$paths];
+        }
+
         $this->paths = $paths;
     }
 
