@@ -125,6 +125,10 @@ class Driver extends AbstractOptions
      */
     public function setPaths($paths)
     {
+        if (is_string($paths)) {
+            $paths = [$paths];
+        }
+
         $this->paths = $paths;
     }
 
